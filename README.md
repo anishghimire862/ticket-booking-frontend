@@ -1,73 +1,33 @@
-# React + TypeScript + Vite
+# Ticket Booking Frontend
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Frontend implementation for the ticket booking system.
 
-Currently, two official plugins are available:
+## Technologies Used
+- React
+- Radix UI
+- Tailwind CSS
+- ESLint and Prettier
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Steps to Run The Project
+- Clone the repository:
+  `git clone git@github.com:anishghimire862/ticket-booking-frontend.git`
 
-## React Compiler
+- Create the environment file:
+  `cp .env.example .env`
+- Update the environment variables in the `.env` file as needed.
+- Install dependencies:
+ `npm install`
+- Start the frontend application:
+  `npm run dev`
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+After completing the steps above, the frontend should be up and running on the port `5173`.
 
-## Expanding the ESLint configuration
+## Assumptions & Simplifications
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+### Frontend Assumptions & Simplifications
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
-
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
-
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+- The UI supports booking for a single event only.
+- Each booking request can include tickets from a single tier only.
+- Alerts are used for feedback; no advanced notifications or error handling.
+- The system assumes a single, constant user; no authentication or login is implemented.
+- Additional frontend features such as multi-event selection or multi-tier booking are intentionally omitted for simplicity.
