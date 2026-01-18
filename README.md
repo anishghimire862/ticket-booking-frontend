@@ -31,3 +31,5 @@ After completing the steps above, the frontend should be up and running on the p
 - Alerts are used for feedback; no advanced notifications or error handling.
 - The system assumes a single, constant user; no authentication or login is implemented.
 - Additional frontend features such as multi-event selection or multi-tier booking are intentionally omitted for simplicity.
+
+**NOTE:** The entire frontend is currently implemented inside App.tsx. We could break it down into proper components such as TicketsList and TicketBookingForm, but it was left as is due to time constraints.
