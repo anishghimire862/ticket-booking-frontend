@@ -201,7 +201,7 @@ function App() {
                         ? selectedTier.toString()
                         : undefined
                     }
-                    onValueChange={(val) => setSelectedTier(Number(val))} // store as number in state
+                    onValueChange={(val) => setSelectedTier(Number(val))}
                   >
                     <SelectTrigger className="w-full">
                       <SelectValue placeholder="Select a tier" />
